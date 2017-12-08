@@ -59,7 +59,7 @@ public class Day8 {
 
         }
         Map.Entry<String, Integer> max = null;
-        for (Map.Entry<String, Integer> entry : registri.entrySet()){
+        for (Map.Entry<String, Integer> entry : registri.entrySet()) {
             if (max == null || entry.getValue().compareTo(max.getValue()) > 0) {
                 max = entry;
             }

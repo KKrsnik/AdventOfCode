@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class Day2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int max, min;
-        int sum = 0;
+        int sum1 = 0;
+        int sum2 = 0;
         while (sc.hasNext()) {
             String vrstica = sc.nextLine();
 
@@ -16,30 +16,31 @@ public class Day2 {
                     if (i != j) {
                         int druga = Integer.parseInt(crke[j]);
 
-                        if (prva%druga == 0) {
-                            sum += prva/druga;
+                        if (prva % druga == 0) {
+                            sum2 += prva / druga;
                         }
                     }
                 }
             }
 
 
-
 //1.1
-//            max = 0;
-//            min = Integer.MAX_VALUE;
-//            for (int i = 0; i < crke.length; i++) {
-//                int stevilka = Integer.parseInt(crke[i]);
-//                if (stevilka > max) {
-//                    max = stevilka;
-//                }
-//                if (stevilka < min) {
-//                    min = stevilka;
-//                }
-//            }
-//            sum += max-min;
+            int max, min;
+            max = Integer.MIN_VALUE;
+            min = Integer.MAX_VALUE;
+            for (String aCrke : crke) {
+                int stevilka = Integer.parseInt(aCrke);
+                if (stevilka > max) {
+                    max = stevilka;
+                }
+                if (stevilka < min) {
+                    min = stevilka;
+                }
+            }
+            sum1 += max - min;
         }
-        System.out.println(sum);
+        System.out.println("Answer 1: " + sum1);
+        System.out.println("Answer 2: " + sum2);
 
     }
 }

@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class Day6 {
     public static void main(String[] args) {
-        int[] vhod = new int[]{4,10,4,1,8,4,9,14,5,1,14,15,0,15,3,5};
+        int[] vhod = new int[]{4, 10, 4, 1, 8, 4, 9, 14, 5, 1, 14, 15, 0, 15, 3, 5};
         ArrayList<int[]> stanja = new ArrayList<>();
         stanja.add(vhod);
 
@@ -14,7 +14,7 @@ public class Day6 {
         int counter = 0;
         while (true) {
             int[] vhod = new int[stanja.get(0).length];
-            System.arraycopy(stanja.get(stanja.size()-1), 0, vhod, 0, vhod.length);
+            System.arraycopy(stanja.get(stanja.size() - 1), 0, vhod, 0, vhod.length);
             int max = vhod[0];
             int maxInd = 0;
             for (int i = 1; i < vhod.length; i++) {
@@ -37,7 +37,7 @@ public class Day6 {
 //6.1
 //                    return counter;
 //6.2
-                    return stanja.size()-i;
+                    return stanja.size() - i;
                 }
             }
             stanja.add(vhod);

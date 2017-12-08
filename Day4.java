@@ -35,31 +35,23 @@ public class Day4 {
                         pravilna = false;
                         break;
                     }
-                    Map<Character, Integer> chars1 = new HashMap<Character, Integer>(Math.min(besede[i].length(), 26));
-                    for (int k = 0; k < besede[i].length(); k++)
-                    {
+                    Map<Character, Integer> chars1 = new HashMap<>(Math.min(besede[i].length(), 26));
+                    for (int k = 0; k < besede[i].length(); k++) {
                         char charAt = besede[i].charAt(k);
 
-                        if (!chars1.containsKey(charAt))
-                        {
+                        if (!chars1.containsKey(charAt)) {
                             chars1.put(charAt, 1);
-                        }
-                        else
-                        {
+                        } else {
                             chars1.put(charAt, chars1.get(charAt) + 1);
                         }
                     }
-                    Map<Character, Integer> chars2 = new HashMap<Character, Integer>(Math.min(besede[i].length(), 26));
-                    for (int k = 0; k < besede[j].length(); k++)
-                    {
+                    Map<Character, Integer> chars2 = new HashMap<>(Math.min(besede[i].length(), 26));
+                    for (int k = 0; k < besede[j].length(); k++) {
                         char charAt = besede[j].charAt(k);
 
-                        if (!chars2.containsKey(charAt))
-                        {
+                        if (!chars2.containsKey(charAt)) {
                             chars2.put(charAt, 1);
-                        }
-                        else
-                        {
+                        } else {
                             chars2.put(charAt, chars2.get(charAt) + 1);
                         }
                     }

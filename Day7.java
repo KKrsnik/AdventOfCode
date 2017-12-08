@@ -36,7 +36,8 @@ class Program {
 }
 
 public class Day7 {
-//7.2  7.1 sm na roko najdu.
+//7.1 sm na roko najdu.
+//7.2:
     private static boolean exit = false;
     private static int rezultat = 0;
 
@@ -69,12 +70,12 @@ public class Day7 {
             teza = prvi;
             if (prvi != drugi) {
                 int iPrvi = i;
-                int iDrugi = i+1;
+                int iDrugi = i + 1;
                 int tretji;
                 if (i == 0) {
-                    tretji = poisci(stolp, potomci[i+2]);
+                    tretji = poisci(stolp, potomci[i + 2]);
                     if (drugi == tretji) {
-                        iPrvi = i+1;
+                        iPrvi = i + 1;
                         iDrugi = i;
                     }
                 }
@@ -102,12 +103,12 @@ public class Day7 {
             int teza = Integer.parseInt(besede[1].substring(1, besede[1].indexOf(')')));
             String[] potomci = null;
             if (besede.length > 3) {
-                potomci = new String[besede.length-3];
-                for (int i = 3; i < besede.length-1; i++) {
-                    besede[i] = besede[i].substring(0, besede[i].length()-1);
-                    potomci[i-3] = besede[i];
+                potomci = new String[besede.length - 3];
+                for (int i = 3; i < besede.length - 1; i++) {
+                    besede[i] = besede[i].substring(0, besede[i].length() - 1);
+                    potomci[i - 3] = besede[i];
                 }
-                potomci[potomci.length-1] = besede[besede.length-1];
+                potomci[potomci.length - 1] = besede[besede.length - 1];
             }
             stolp.add(new Program(besede[0], teza, potomci));
         }
