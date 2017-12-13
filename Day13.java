@@ -11,26 +11,24 @@ public class Day13 {
             lenght = Integer.parseInt(line[0]);
             input.put(lenght, Integer.parseInt(line[1]));
         }
-        int location;
         int cost;
         int delay = -1;
         boolean cought;
         while (true) {
             delay++;
             cost = 0;
-            location = -1;
             cought = false;
             for (int i = 0; i < lenght + 1; i++) {
-                location++;
-                if (input.get(location) != null) {
-                    int modul = input.get(location) + (input.get(location) - 2);
+                Integer curr = input.get(i);
+                if (curr != null) {
+                    int modul = curr * 2 - 2;
                     int scanner = (i + delay) % modul;
                     if (scanner == 0) {
-                        cost += input.get(location) * location;
                         cought = true;
                         if (delay != 0) {
                             break;
                         }
+                        cost += curr * i;
                     }
                 }
             }
